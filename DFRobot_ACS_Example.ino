@@ -1,45 +1,34 @@
-// xsns_99_my_ac_sensor.ino
-#ifdef USE_MY_AC_SENSOR
-
+#include <Arduino.h>
 #include <DFRobot_ACS.h>
 
-const int sensorPin = A0; // Analog input pin for AC current sensor
+// Define the pin where the sensor is connected
+const int sensorPin = A0; // Analog input pin
+
 DFRobot_ACS acs(sensorPin);
 
-void MyACSensorInit() {
+void setup() {
+  // Initialize serial communication
+  Serial.begin(9600);
   acs.calibrate();
 }
 
-void MyACSensorRead() {
+void loop() {
+  // Read the current value from the sensor
   float current = acs.readCurrent();
 
-  char value[16];
-  snprintf_P(value, sizeof(value), PSTR("%0.2f"), current);
+  // Print the current value to the serial monitor
+  Serial.print("Current: ");
+  Serial.print(current);
+  Serial.println(" A");
 
-  // Publish the current value
-  snprintf_P(mqtt_data, sizeof(mqtt_data), PSTR("{\"ACCurrent\":%s}"), value);
-  MQTT_PublishPrefixTopic_P(RESULT_OR_TELE, PSTR(D_RSLT_STATE), mqtt_data);
+  // Wait for a short period before reading the value again
+  delay(1000);
 }
 
-boolean Xsns99(uint8_t function) {
-  boolean result = false;
-  switch (function) {
-    case FUNC_INIT:
-      MyACSensorInit();
-      result = true;
-      break;
-    case FUNC_LOOP:
-      MyACSensorRead();
-      result = true;
-      break;
-    case FUNC_JSON_APPEND:
-      break;
-    case FUNC_COMMAND:
-      break;
-    default:
-      break;
+int main() {
+  setup();
+  while (true) {
+    loop();
   }
-  return result;
+  return 0;
 }
-
-#endif // USE_MY_AC_SENSOR
