@@ -6,10 +6,12 @@ This repository contains the modified TASMOTA firmware integrated with the DF Ro
 
 ## Integration Steps
 
-1.Clone the TASMOTA Repository :- Clone the TASMOTA firmware repository to your local machine: by uisng this command-
+1.Clone the TASMOTA Repository :-Clone the TASMOTA firmware repository to your local machine: by uisng this command-
 
-git clone https://github.com/arendst/Tasmota.git
-cd Tasmota
+- git clone https://github.com/arendst/Tasmota.git
+- cd Tasmota
+
+
 
 2. Utilize DF Robot SCT013 Example Code:
    - Define the SCT013 sensor constants in the appropriate configuration file. Modify or create a file in the TASMOTA firmware where you can add new sensor configurations. For example, modify 
@@ -23,6 +25,8 @@ cd Tasmota
      Integrate the sensor reading into the main loop or relevant processing function. Modify Sonoff_Sensors.cpp 
      
    - Updated the main loop to include SCT013 sensor readings.
+  
+   
 
 5. Compile and Test:
    - Instructions on compiling the firmware and uploading it to the device.
