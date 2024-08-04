@@ -5,6 +5,7 @@ This repository provides an example of how to integrate the DF Robot SCT013 AC c
 ## Arduino Example
 
 The `Arduino/DFRobot_ACS_Example.ino` file demonstrates how to read AC current values using the DF Robot SCT013 sensor with an Arduino.
+- First, ensure you have the DFRobot Analog AC Current Sensor library installed. You can find it ( https://github.com/DFRobot/DFRobot_AnalogACurrentSensor )
 
 ## Tasmota Firmware
 
