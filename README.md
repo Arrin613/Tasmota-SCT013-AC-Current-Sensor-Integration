@@ -89,6 +89,3 @@ The `Arduino/DFRobot_ACS_Example.ino` file demonstrates how to read AC current v
     platformio run -e <your_environment> -t upload
     ```
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
