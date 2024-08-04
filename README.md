@@ -90,6 +90,6 @@ The `Arduino/DFRobot_ACS_Example.ino` file demonstrates how to read AC current v
     ```
 
 Final Notes
--Ensure the DFRobot_ACS library is properly integrated with the Tasmota firmware. If needed, you might have to include the library files within the Tasmota project.
--The pin definition (sensorPin = A0) should match the actual pin used on your Tasmota-supported device.
--Test the firmware thoroughly to ensure it correctly reads and reports the current values.
+- Ensure the DFRobot_ACS library is properly integrated with the Tasmota firmware. If needed, you might have to include the library files within the Tasmota project.
+- The pin definition (sensorPin = A0) should match the actual pin used on your Tasmota-supported device.
+- Test the firmware thoroughly to ensure it correctly reads and reports the current values.
